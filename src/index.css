@@ -1,5 +1,5 @@
-@import "tailwindcss";
 @import url("https://fonts.googleapis.com/css2?family=Doto:wght@100..900&display=swap");
+@import "tailwindcss";
 
 :root {
   --font-doto: "Doto", "JetBrains Mono", monospace;
@@ -8,11 +8,105 @@
   font-weight: 400;
 
   color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  margin: 0;
+  display: flex;
+  place-items: center;
+  min-width: 320px;
+  min-height: 100vh;
+  background-color: white;
+  color: black;
+  transition:
+    background-color 0.3s ease,
+    color 0.3s ease;
+}
+
+.dark body {
+  background-color: #0a0a0a;
+  color: white;
+}
+
+/* Hide Scrollbar */
+html,
+body {
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none; /* IE and Edge */
+  overflow-x: hidden;
+}
+
+::-webkit-scrollbar {
+  display: none; /* Chrome, Safari and Opera */
+}
+
+@layer utilities {
+  .clip-custom-shape {
+    clip-path: polygon(
+      0 0,
+      100% 0,
+      100% 100%,
+      40% 100%,
+      40% 30%,
+      15% 30%,
+      15% 100%,
+      1% 100%
+    );
+  }
+
+  .clip-custom-rounded-full {
+    /* Create an SVG mask with stroke for rounded inner and outer corners */
+    -webkit-mask-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" preserveAspectRatio="none"><path d="M0,0 L100,0 L100,100 L40,100 L40,30 L15,30 L15,100 L1,100 Z" fill="black" style="stroke: black; stroke-width: 4; stroke-linejoin: round; stroke-linecap: round;"/></svg>');
+    mask-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" preserveAspectRatio="none"><path d="M0,0 L100,0 L100,100 L40,100 L40,30 L15,30 L15,100 L1,100 Z" fill="black" style="stroke: black; stroke-width: 4; stroke-linejoin: round; stroke-linecap: round;"/></svg>');
+    mask-repeat: no-repeat;
+    mask-size: 100% 100%;
+  }
+
+  .clip-custom-rounded-complex {
+    /* This approximates rounded corners with extra curve points */
+    clip-path: polygon(
+      /* Top-left rounded corner */ 0 10px,
+      5px 5px,
+      10px 0,
+
+      /* Top edge */ 100% 0,
+
+      /* Top-right rounded corner */ calc(100% - 10px) 0,
+      calc(100% - 5px) 5px,
+      100% 10px,
+
+      /* Right edge */ 100% calc(100% - 10px),
+      /* Bottom-right rounded corner */ 100% calc(100% - 5px),
+      calc(100% - 5px) calc(100% - 0px),
+      calc(100% - 10px) 100%,
+
+      /* Right edge to first notch */ 40% 100%,
+
+      /* First notch bottom-left inner corner (rounded) */ calc(40% - 10px) 100%,
+      40% calc(100% - 10px),
+      /* First notch vertical edge up */ 40% calc(30% + 10px),
+      /* First notch top-left inner corner (rounded) */ calc(40% - 10px) 30%,
+      40% 30%,
+
+      /* First notch top edge */ 15% 30%,
+
+      /* Second notch top-right inner corner (rounded) */ 15% calc(30% - 10px),
+      calc(15% + 10px) 30%,
+
+      /* Second notch vertical edge down */ 15% calc(100% - 10px),
+      /* Second notch bottom-right inner corner (rounded) */ calc(15% + 10px)
+        100%,
+      15% 100%,
+
+      /* Left edge to bottom-left outer corner */ 10px 100%,
+
+      /* Bottom-left outer rounded corner */ 5px calc(100% - 5px),
+      0 calc(100% - 10px)
+    );
+  }
 }
