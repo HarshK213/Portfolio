@@ -8,25 +8,13 @@ import {
     BarChart,
 } from "lucide-react";
 import { useTheme } from "../context/ThemeContext";
-import { useState } from "react";
-import RollingText from "./ui/RollingText";
 
 const NavButton = ({ name }: { name: string }) => {
-    const [isHovered, setIsHovered] = useState(false);
     return (
         <button
-            onMouseEnter={() => setIsHovered(true)}
-            onMouseLeave={() => setIsHovered(false)}
             className="hover:bg-primary rounded-full h-10 w-20 flex items-center justify-center text-black/70 dark:text-gray-300"
         >
             {name}
-            {/*<RollingText
-                text={name}
-                active={isHovered}
-                // inView=true
-                inViewMargin="0px"
-                className="h-10 w-20 flex items-center justify-center text-black/70 dark:text-gray-300"
-            />*/}
         </button>
     );
 };

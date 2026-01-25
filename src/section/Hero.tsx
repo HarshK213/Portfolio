@@ -1,11 +1,8 @@
 import { Instagram, Linkedin, Twitter } from "lucide-react";
 import { useEffect, useState } from "react";
 import { motion, useScroll, useTransform } from "framer-motion";
-import { useTheme } from "../context/ThemeContext";
 
 function Hero() {
-    const { theme } = useTheme();
-    const isDarkMode = theme === "dark";
     const { scrollY } = useScroll();
     const [viewportHeight, setViewportHeight] = useState(1000);
 
