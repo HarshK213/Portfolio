@@ -1,22 +1,12 @@
 function About() {
     return (
-        <div className="relative h-screen bg-white/10 dark:bg-black/80 z-10 px-[250px] py-[100px] flex flex-col gap-24 mx-5 rounded-t-[20px] backdrop-blur-2xl">
+        <div className="relative h-screen bg-primary z-10 px-[250px] py-[100px] flex flex-col gap-24 mx-5 rounded-[20px] backdrop-blur-2xl">
             <div className="w-3xs relative inline-block px-10 py-6">
-              {/* Top-left corner */}
-              {/*<span className="absolute top-0 left-0 w-4 h-4 border-t-2 border-l-2 border-white"></span>*/}
-            
-              {/* Top-right corner */}
-              <span className="absolute top-0 right-0 w-4 h-4 border-t-2 border-r-2 border-white"></span>
-            
-              {/* Bottom-left corner */}
-              <span className="absolute bottom-0 left-0 w-4 h-4 border-b-2 border-l-2 border-white"></span>
-            
-              {/* Bottom-right corner */}
-              {/*<span className="absolute bottom-0 right-0 w-4 h-4 border-b-2 border-r-2 border-white"></span>*/}
-            
-              <h2 className="text-4xl font-bold text-white font-[Doto]">
-                About Me
-              </h2>
+                <span className="absolute top-0 right-0 w-4 h-4 border-t-2 border-r-2 border-white"></span>
+                <span className="absolute bottom-0 left-0 w-4 h-4 border-b-2 border-l-2 border-white"></span>
+                <h2 className="text-4xl font-bold text-white font-[Doto]">
+                    About Me
+                </h2>
             </div>
 
             <div className="flex">

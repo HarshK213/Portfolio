@@ -17,15 +17,16 @@ const NavButton = ({ name }: { name: string }) => {
         <button
             onMouseEnter={() => setIsHovered(true)}
             onMouseLeave={() => setIsHovered(false)}
-            className="hover:bg-white/20 rounded-full"
+            className="hover:bg-primary rounded-full h-10 w-20 flex items-center justify-center text-black/70 dark:text-gray-300"
         >
-            <RollingText
+            {name}
+            {/*<RollingText
                 text={name}
                 active={isHovered}
                 // inView=true
                 inViewMargin="0px"
                 className="h-10 w-20 flex items-center justify-center text-black/70 dark:text-gray-300"
-            />
+            />*/}
         </button>
     );
 };
@@ -42,7 +43,7 @@ const Navbar = () => {
     return (
         <div className="w-screen p-4 flex justify-between items-center">
             {/* Middle Section */}
-            <div className="h-12.5 w-250 mx-auto bg-white/10 dark:bg-black/20 backdrop-blur-md rounded-full flex items-center justify-between p-1.25 border border-white/30">
+            <div className="h-12.5 w-250 mx-auto bg-offset/30 dark:bg-secondary/20 backdrop-blur-md rounded-full flex items-center justify-between p-1.25 ">
                 {/* Profile and Name */}
                 <div className="flex items-center gap-3">
                     <div className="size-10 rounded-full overflow-hidden">
@@ -67,10 +68,10 @@ const Navbar = () => {
             </div>
 
             {/* Corner Section */}
-            <div className="h-14 w-auto p-2 flex items-center gap-2 bg-white/10 dark:bg-black/10 backdrop-blur-sm rounded-full border border-white/30">
+            <div className="h-14 w-auto p-2 flex items-center gap-2 bg-offset/30 dark:bg-secondary/20 backdrop-blur-sm rounded-full ">
                 <button
                     onClick={toggleTheme}
-                    className="h-10 w-10 bg-white/30 dark:bg-black/70 rounded-full flex items-center justify-center transition-all duration-200 shadow-sm"
+                    className="h-10 w-10 bg-white/70 dark:bg-black/70 rounded-full flex items-center justify-center transition-all duration-200 shadow-sm"
                 >
                     {theme === "light" ? (
                         <Moon size={20} className="text-black" />
@@ -82,7 +83,7 @@ const Navbar = () => {
                     href="https://github.com/HarshK213"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="h-10 w-10 bg-white/30 dark:bg-black/70 rounded-full flex items-center justify-center transition-all duration-200 shadow-sm"
+                    className="h-10 w-10 bg-white/70 dark:bg-black/70 rounded-full flex items-center justify-center transition-all duration-200 shadow-sm"
                 >
                     <Github size={20} className="text-black dark:text-white" />
                 </a>

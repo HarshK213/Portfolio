@@ -73,45 +73,45 @@ function Skill() {
   ];
 
   return (
-    <section className="relative bg-white/10 dark:bg-black/80 px-6 md:px-12 lg:px-20 py-16 md:py-24 mx-5 backdrop-blur-2xl flex flex-col gap-12 md:gap-16">
+    <section className="relative bg-secondary dark:bg-offset rounded-[20px] px-6 md:px-12 lg:px-20 py-16 md:py-24 mx-5 backdrop-blur-2xl flex flex-col gap-12 md:gap-16 border-4 border-offset dark:border-secondary mt-4">
       {/* Heading */}
       <div className="flex flex-col gap-3">
           <div className="w-3xs relative inline-block px-10 py-6">
-            <span className="absolute top-0 right-0 w-4 h-4 border-t-2 border-r-2 border-white"></span>
-            <span className="absolute bottom-0 left-0 w-4 h-4 border-b-2 border-l-2 border-white"></span>
+            <span className="absolute top-0 right-0 w-4 h-4 border-t-2 border-r-2 border-offset dark:border-secondary"></span>
+            <span className="absolute bottom-0 left-0 w-4 h-4 border-b-2 border-l-2 border-offset dark:border-secondary"></span>
     
-            <h2 className="text-4xl font-bold text-white font-[Doto]">Skills & Tools</h2>
+            <h2 className="text-4xl font-bold text-primary font-[Doto]">Skills & Tools</h2>
           </div>
       </div>
 
       {/* Category Cards */}
-      <div className="flex flex-col gap-8">
+      <div className="flex flex-col gap-8 ">
         {categories.map((categoryData, idx) => (
           <div key={idx} className="flex flex-col gap-4">
             {/* Category Header */}
             <div className="flex items-center gap-3 mb-2">
-              <div className="w-1 h-6 bg-gradient-to-b from-white to-gray-600 rounded-full"></div>
-              <h3 className="text-xl font-bold text-white uppercase tracking-wide">
+              <div className="w-1 h-6 bg-gradient-to-b from-primary to-transparent rounded-full"></div>
+              <h3 className="text-xl font-bold text-primary uppercase tracking-wide">
                 {categoryData.category}
               </h3>
-              <div className="flex-1 h-px bg-gradient-to-r from-white/50 to-transparent"></div>
+              <div className="flex-1 h-px bg-gradient-to-r from-primary to-transparent"></div>
             </div>
 
             {/* Skills Grid */}
-            <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-3">
+            <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-10 gap-3">
               {categoryData.skills.map((skill, i) => {
                 const Icon = skill.icon;
                 return (
                   <div
                     key={i}
-                    className="group relative flex flex-col items-center justify-center gap-2 p-3 md:p-4 rounded-lg backdrop-blur-md border border-gray-200 dark:border-white/10 hover:border-blue-400/30 bg-white/50 dark:bg-white/5 hover:bg-white/80 dark:hover:bg-white/15 transition-all duration-300 hover:shadow-lg hover:-translate-y-0.5"
+                    className="group relative flex flex-col items-center justify-center gap-2 p-3 md:p-4 rounded-lg  bg-offset/20 dark:bg-secondary/20 hover:bg-offset/40 dark:hover:bg-secondary/40 transition-all duration-300 hover:shadow-lg hover:-translate-y-0.5"
                   >
                     <div
                       className={`p-2 rounded-lg ${skill.color} transform group-hover:scale-110 transition-transform duration-300`}
                     >
                       <Icon className="w-5 h-5 md:w-6 md:h-6 text-white" />
                     </div>
-                    <p className="text-gray-800 dark:text-white text-xs font-semibold text-center group-hover:text-blue-600 dark:group-hover:text-blue-300 transition-colors">
+                    <p className="text-gray-800 dark:text-white text-xs font-semibold text-center transition-colors">
                       {skill.name}
                     </p>
                   </div>

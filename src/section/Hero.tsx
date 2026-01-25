@@ -51,19 +51,11 @@ function Hero() {
         },
     ];
 
-    return (
+        return (
         <>
             {/* Background Image */}
             <div className="fixed inset-0 z-0">
-                <img
-                    src={
-                        isDarkMode
-                            ? "Gemini_Generated_Image_vade5mvade5mvade.png"
-                            : "macOS-Monterey-wallpaper-Dark.jpg"
-                    }
-                    className="w-screen h-screen object-cover"
-                    alt="Background"
-                />
+                <div className="w-screen h-screen bg-secondary dark:bg-offset"></div>
             </div>
 
             {/* Main Content Container */}
@@ -72,15 +64,15 @@ function Hero() {
                     className="flex flex-col items-center"
                     style={{ y, opacity, scale }}
                 >
-                    <p className="text-white text-[30px] leading-tight mb-2">
+                    <p className="text-offset dark:text-secondary text-[30px] leading-tight mb-2">
                         Hello, I'm
                     </p>
 
-                    <h1 className="text-white font-[Doto] text-[70px] font-extrabold leading-none mb-2">
+                    <h1 className="text-primary font-[Montserrat] text-[100px] font-extrabold leading-none mb-2">
                         HARSH KUSHWAHA
                     </h1>
 
-                    <p className="text-white/70 mb-4 text-center">
+                    <p className="text-offset/70 dark:text-secondary/70 mb-4 text-center">
                         Full stack web developer crafting responsive interfaces{" "}
                         <br /> and robust backends for real-world products.
                     </p>
@@ -94,7 +86,7 @@ function Hero() {
                                 target="_blank"
                                 rel="noopener noreferrer"
                                 aria-label={link.label}
-                                className="size-10 bg-black/30 dark:bg-white/20 rounded-full flex items-center justify-center hover:bg-black/20 dark:hover:bg-white/30 transition-colors duration-300"
+                                className="size-10 bg-offset/40 dark:bg-secondary/40 hover:bg-primary dark:hover:bg-primary rounded-full flex items-center justify-center transition-colors duration-300"
                             >
                                 <div className="text-white">{link.icon}</div>
                             </a>
