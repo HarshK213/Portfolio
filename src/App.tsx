@@ -1,8 +1,11 @@
-import About from "./components/About";
-import Hero from "./components/Hero";
+import About from "./section/About";
+import Hero from "./section/Hero";
 import Navbar from "./components/Navbar";
 import { useEffect } from "react";
 import Lenis from "lenis";
+import Skill from "./section/Skill";
+import Project from "./section/Project";
+import Footer from "./components/Footer";
 
 function App() {
   useEffect(() => {
@@ -33,6 +36,10 @@ function App() {
       </div>
       <Hero />
       <About />
+      {/*<Education/>*/}
+      <Skill />
+      <Project />
+      <Footer />
     </div>
   );
 }

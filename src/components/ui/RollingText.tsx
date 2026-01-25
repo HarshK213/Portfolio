@@ -10,16 +10,6 @@ import {
 } from "motion/react";
 import * as React from "react";
 
-const ENTRY_ANIMATION = {
-  initial: { rotateX: 0 },
-  animate: { rotateX: 90 },
-};
-
-const EXIT_ANIMATION = {
-  initial: { rotateX: 90 },
-  animate: { rotateX: 0 },
-};
-
 const formatCharacter = (char: string) => (char === " " ? "\u00A0" : char);
 
 type RollingTextProps = Omit<React.ComponentProps<"span">, "children"> & {
@@ -53,11 +43,6 @@ function RollingText({
   // const characters = React.useMemo(() => text.split(""), [text]);
   const characters = React.useMemo(() => text.split(""), [text]);
 
-  const containerVariants = {
-    initial: {},
-    active: {},
-  };
-
   const itemVariants1 = {
     initial: { rotateX: 0 },
     active: { rotateX: 180 },
@@ -69,7 +54,7 @@ function RollingText({
   };
 
   return (
-    <span data-slot="rolling-text" {...(props as any)} ref={ref}>
+    <span data-slot="rolling-text" {...props} ref={ref}>
       {characters.map((char, idx) => (
         <span
           aria-hidden="true"
