@@ -4,7 +4,7 @@ import {
 	SiJavascript,
 	SiTypescript,
 	SiHtml5,
-	SiCss3,
+	SiCss,
 	SiReact,
 	SiTailwindcss,
 	SiNodedotjs,
@@ -50,7 +50,7 @@ function Skill() {
 			category: "Frontend",
 			skills: [
 				{ name: "HTML5", icon: SiHtml5, iconColor: "text-orange-500" },
-				{ name: "CSS3", icon: SiCss3, iconColor: "text-blue-400" },
+				{ name: "CSS3", icon: SiCss, iconColor: "text-blue-400" },
 				{ name: "React.js", icon: SiReact, iconColor: "text-cyan-400" },
 				{
 					name: "Tailwind CSS",
