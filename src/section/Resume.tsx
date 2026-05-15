@@ -2,7 +2,7 @@ import { FileText } from "lucide-react";
 
 function Resume() {
 	return (
-		<section className="relative w-full min-h-full my-37.5 flex items-center justify-center px-6">
+		<section id="resume" className="relative w-full min-h-full my-37.5 flex items-center justify-center px-6">
 			<div
 				className="
 					w-full max-w-4xl
@@ -39,7 +39,7 @@ function Resume() {
 
 				{/* Button */}
 				<a
-					href="/resume.pdf"
+					href="https://github.com/HarshK213/Resume/blob/main/Harsh_Kushwaha_Resume.pdf"
 					target="_blank"
 					rel="noopener noreferrer"
 					className="

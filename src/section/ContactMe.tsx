@@ -2,7 +2,10 @@ import { Mail, MapPin, Github, Linkedin, Twitter } from "lucide-react";
 
 function ContactMe() {
 	return (
-		<section id="contact" className="relative min-h-full w-full flex items-center justify-center px-6 m-5">
+		<section
+			id="contact"
+			className="relative min-h-full w-full flex items-center justify-center px-6 m-5"
+		>
 			<div className="flex flex-col items-center text-center font-mono">
 				{/* Heading */}
 				<h2 className="text-xl md:text-6xl font-bold text-white">
@@ -37,7 +40,7 @@ function ContactMe() {
 				{/* Social Links */}
 				<div className="mt-12 flex flex-wrap justify-center gap-4">
 					<a
-						href="https://github.com/yourusername"
+						href="https://github.com/HarshK213"
 						target="_blank"
 						rel="noopener noreferrer"
 						className="
@@ -58,7 +61,7 @@ function ContactMe() {
 					</a>
 
 					<a
-						href="https://linkedin.com"
+						href="https://www.linkedin.com/in/harsh-kushwaha-697ba3289/"
 						target="_blank"
 						rel="noopener noreferrer"
 						className="
@@ -79,7 +82,7 @@ function ContactMe() {
 					</a>
 
 					<a
-						href="https://twitter.com"
+						href="https://x.com/Akio21305"
 						target="_blank"
 						rel="noopener noreferrer"
 						className="

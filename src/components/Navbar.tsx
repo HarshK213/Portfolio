@@ -1,53 +1,149 @@
-import { Home, Briefcase, Phone, BarChart } from "lucide-react";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import RollingText from "./ui/RollingText";
 
-const NavButton = ({ name }: { name: string }) => {
+const SECTION_IDS: Record<string, string> = {
+	Home: "hero",
+	About: "about",
+	Skills: "skills",
+	Projects: "projects",
+	Contact: "contact",
+};
+
+const NavButton = ({
+	name,
+	active = false,
+	onClick,
+}: {
+	name: string;
+	active?: boolean;
+	onClick: () => void;
+}) => {
 	const [isHovered, setIsHovered] = useState(false);
+
 	return (
 		<button
 			onMouseEnter={() => setIsHovered(true)}
 			onMouseLeave={() => setIsHovered(false)}
-			className="hover:bg-white/20 rounded-full"
+			onClick={onClick}
+			className={`
+				px-4 py-2
+				rounded-2xl
+				text-sm md:text-base
+				font-medium
+				transition-all duration-300
+				border
+				${
+					active
+						? "bg-red-500/10 border-red-500/40 text-white"
+						: "border-transparent text-white/60 hover:text-white hover:bg-white/[0.03]"
+				}
+			`}
 		>
 			<RollingText
 				text={name}
 				active={isHovered}
 				inViewMargin="0px"
-				className="h-7 sm:h-8 md:h-10 px-1.5 sm:px-2 md:px-3 text-xs sm:text-sm md:text-base flex items-center justify-center text-black/70 dark:text-gray-300"
+				className="h-6 flex items-center justify-center"
 			/>
 		</button>
 	);
 };
 
 const Navbar = () => {
-	const navItems = [
-		{ name: "Home", icon: <Home size={20} /> },
-		{ name: "Project", icon: <Briefcase size={20} /> },
-		{ name: "Contact", icon: <Phone size={20} /> },
-		{ name: "Stats", icon: <BarChart size={20} /> },
-	];
+	const [activeSection, setActiveSection] = useState("hero");
+
+	useEffect(() => {
+		const sectionIds = Object.values(SECTION_IDS);
+		const observers: IntersectionObserver[] = [];
+
+		sectionIds.forEach((id) => {
+			const el = document.getElementById(id);
+			if (!el) return;
+
+			const observer = new IntersectionObserver(
+				(entries) => {
+					entries.forEach((entry) => {
+						if (entry.isIntersecting) {
+							setActiveSection(id);
+						}
+					});
+				},
+				{ rootMargin: "-40% 0px -55% 0px" },
+			);
+			observer.observe(el);
+			observers.push(observer);
+		});
+
+		return () => observers.forEach((o) => o.disconnect());
+	}, []);
+
+	const handleNavClick = (sectionId: string) => {
+		const el = document.getElementById(sectionId);
+		if (el) {
+			el.scrollIntoView({ behavior: "smooth" });
+		}
+	};
+
+	const navItems = Object.keys(SECTION_IDS);
 
 	return (
-		<div className="w-full p-2 sm:p-3 md:p-4 flex justify-center items-center">
-			<div className="h-9 sm:h-10 md:h-12 max-w-max sm:max-w-125 lg:max-w-200 mx-auto bg-white/10 dark:bg-black/20 backdrop-blur-md rounded-full flex items-center justify-between px-1.5 sm:px-2 md:px-2.5 py-1 border border-white/30">
-				<div className="flex items-center gap-1 sm:gap-2 md:gap-3">
-					<div className="w-7 h-7 sm:w-8 sm:h-8 md:w-10 md:h-10 rounded-full overflow-hidden flex-shrink-0">
+		<div className="fixed top-0 left-0 w-full z-50 px-4 py-4 flex justify-center">
+			<div
+				className="
+					w-full max-w-7xl
+					rounded-3xl
+					border border-white/10
+					bg-black/40
+					backdrop-blur-xl
+					px-6 py-4
+					flex items-center justify-between
+					shadow-[0_0_40px_rgba(0,0,0,0.4)]
+				"
+			>
+				{/* Left */}
+				<div className="flex items-center gap-4">
+					<div className="w-10 h-10 rounded-full overflow-hidden">
 						<img
 							src="favicon.svg"
-							className="object-cover w-full h-full"
+							className="w-full h-full object-cover"
 						/>
 					</div>
-					<p className="text-black dark:text-white text-sm sm:text-base md:text-xl font-[Doto] font-bold hidden sm:block">
-						Harsh K
-					</p>
+
+					<h1 className="text-2xl font-bold text-white">
+						Harsh<span className="text-white/70">.</span>
+					</h1>
 				</div>
 
-				<div className="flex items-center gap-0.5 sm:gap-1 md:gap-2.5">
-					{navItems.map((item, idx) => (
-						<NavButton key={idx} name={item.name} />
+				{/* Center */}
+				<div className="hidden lg:flex items-center gap-2">
+					{navItems.map((name, idx) => (
+						<NavButton
+							key={idx}
+							name={name}
+							active={SECTION_IDS[name] === activeSection}
+							onClick={() => handleNavClick(SECTION_IDS[name])}
+						/>
 					))}
 				</div>
+
+				{/* Right */}
+				<button
+					className="
+						text-red-400
+						font-medium
+						text-base
+						hover:text-red-300
+						transition-colors duration-300
+					"
+					onClick={() =>
+						window.open(
+							"https://github.com/HarshK213/Resume/blob/main/Harsh_Kushwaha_Resume.pdf",
+							"_blank",
+						)
+					}
+				>
+					Resume
+				</button>
 			</div>
 		</div>
 	);

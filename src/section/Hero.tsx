@@ -43,7 +43,7 @@ function Hero() {
 	return (
 		<>
 			{/* Main Content Container */}
-			<div className="relative h-screen w-screen flex justify-center items-center overflow-hidden">
+			<div id="hero" className="relative h-screen w-screen flex justify-center items-center overflow-hidden">
 				<motion.div
 					className="flex flex-col items-center gap-y-4"
 					style={{ y, opacity, scale }}

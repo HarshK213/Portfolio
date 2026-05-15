@@ -28,9 +28,7 @@ function App() {
 				<div className="absolute inset-0 bg-black/50" />
 			</div>
 			<div className="relative z-10">
-				<div className="fixed top-0 left-0 w-full z-50 bg-transparent">
-					<Navbar />
-				</div>
+				<Navbar />
 				<Hero />
 				<About />
 				<Skill />
