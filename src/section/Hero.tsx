@@ -1,12 +1,7 @@
 import {
-	ArrowLeft,
 	ArrowRight,
 	Check,
 	Copy,
-	Github,
-	Instagram,
-	Linkedin,
-	Twitter,
 } from "lucide-react";
 import { useEffect, useState } from "react";
 import { motion, useScroll, useTransform } from "framer-motion";

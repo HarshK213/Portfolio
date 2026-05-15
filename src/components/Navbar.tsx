@@ -1,4 +1,4 @@
-import { Github, Home, Briefcase, Phone, BarChart } from "lucide-react";
+import { Home, Briefcase, Phone, BarChart } from "lucide-react";
 import { useState } from "react";
 import RollingText from "./ui/RollingText";
 
@@ -30,7 +30,7 @@ const Navbar = () => {
 
 	return (
 		<div className="w-full p-3 sm:p-4 flex justify-center items-center">
-			<div className="h-10 sm:h-12 max-w-max sm:max-w-[500px] lg:max-w-[800px] mx-auto bg-white/10 dark:bg-black/20 backdrop-blur-md rounded-full flex items-center justify-between px-2 sm:px-2.5 py-1 border border-white/30">
+			<div className="h-10 sm:h-12 max-w-max sm:max-w-125 lg:max-w-200 mx-auto bg-white/10 dark:bg-black/20 backdrop-blur-md rounded-full flex items-center justify-between px-2 sm:px-2.5 py-1 border border-white/30">
 				<div className="flex items-center gap-2 sm:gap-3">
 					<div className="w-8 h-8 sm:w-10 sm:h-10 rounded-full overflow-hidden">
 						<img
