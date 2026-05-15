@@ -35,7 +35,7 @@ const NavButton = ({
 				${
 					active
 						? "bg-red-500/10 border-red-500/40 text-white"
-						: "border-transparent text-white/60 hover:text-white hover:bg-white/[0.03]"
+						: "border-transparent text-white/60 hover:text-white hover:bg-white/3"
 				}
 			`}
 		>

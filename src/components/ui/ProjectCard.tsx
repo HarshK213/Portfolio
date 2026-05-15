@@ -1,4 +1,5 @@
 import { Github, ExternalLink, type LucideIcon } from "lucide-react";
+import SpotlightCard from "./SpotlightCard";
 
 export interface Feature {
 	name: string;
@@ -21,17 +22,11 @@ interface ProjectCardProps {
 
 function ProjectCard({ project }: ProjectCardProps) {
 	return (
-		<div
-			className="
-				w-full
-				rounded-2xl
-				border border-white/20
-				bg-white/10
-				backdrop-blur-md
-				p-6
-				flex flex-col gap-6
-			"
+		<SpotlightCard
+			spotlightColor="rgba(239, 68, 68, 0.5)"
+			className="w-full rounded-2xl border border-white/20 bg-white/10 backdrop-blur-md"
 		>
+			<div className="p-6 flex flex-col gap-6">
 			{/* Project Name */}
 			<div className="flex flex-col gap-3">
 				<h1 className="text-3xl font-bold text-white">
@@ -140,6 +135,7 @@ function ProjectCard({ project }: ProjectCardProps) {
 				)}
 			</div>
 		</div>
+		</SpotlightCard>
 	);
 }
 
