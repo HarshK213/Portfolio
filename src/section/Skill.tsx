@@ -73,7 +73,7 @@ function Skill() {
   ];
 
   return (
-    <section className="relative bg-white/10 dark:bg-black/80 px-6 md:px-12 lg:px-20 py-16 md:py-24 mx-5 backdrop-blur-2xl flex flex-col gap-12 md:gap-16">
+    <section className="relative px-6 md:px-12 lg:px-20 py-16 md:py-24 mx-5 flex flex-col gap-12 md:gap-16">
       {/* Heading */}
       <div className="flex flex-col gap-3">
           <div className="w-3xs relative inline-block px-10 py-6">
