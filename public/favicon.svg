@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120">
+  <!-- Background -->
+  <rect width="120" height="120" rx="26" fill="#000000" />
+
+  <!-- Red glow circle -->
+  <circle cx="60" cy="60" r="42" fill="#ef4444" opacity="0.12" />
+
+  <!-- H -->
+  <path
+    d="M26 28 V92
+       M26 60 H50
+       M50 28 V92"
+    fill="none"
+    stroke="#ef4444"
+    stroke-width="10"
+    stroke-linecap="round"
+    stroke-linejoin="round"
+  />
+
+  <!-- K -->
+  <path
+    d="M70 28 V92
+       M70 60 L95 28
+       M70 60 L95 92"
+    fill="none"
+    stroke="#ffffff"
+    stroke-width="10"
+    stroke-linecap="round"
+    stroke-linejoin="round"
+  />
+</svg>

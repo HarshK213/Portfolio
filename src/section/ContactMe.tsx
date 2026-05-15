@@ -2,7 +2,7 @@ import { Mail, MapPin, Github, Linkedin, Twitter } from "lucide-react";
 
 function ContactMe() {
 	return (
-		<section className="relative min-h-full w-full flex items-center justify-center px-6 m-5">
+		<section id="contact" className="relative min-h-full w-full flex items-center justify-center px-6 m-5">
 			<div className="flex flex-col items-center text-center font-mono">
 				{/* Heading */}
 				<h2 className="text-xl md:text-6xl font-bold text-white">

@@ -2,7 +2,7 @@ import { FileText } from "lucide-react";
 
 function Resume() {
 	return (
-		<section className="relative w-full min-h-screen flex items-center justify-center px-6">
+		<section className="relative w-full min-h-full my-37.5 flex items-center justify-center px-6">
 			<div
 				className="
 					w-full max-w-4xl

@@ -1,8 +1,4 @@
-import {
-	ArrowRight,
-	Check,
-	Copy,
-} from "lucide-react";
+import { ArrowRight, Check, Copy } from "lucide-react";
 import { useEffect, useState } from "react";
 import { motion, useScroll, useTransform } from "framer-motion";
 
@@ -12,7 +8,7 @@ function Hero() {
 
 	useEffect(() => {
 		const handleResize = () => setViewportHeight(window.innerHeight);
-		handleResize(); // Set initial
+		handleResize();
 		window.addEventListener("resize", handleResize);
 		return () => window.removeEventListener("resize", handleResize);
 	}, []);
@@ -43,23 +39,6 @@ function Hero() {
 			setCopied(false);
 		}, 2000);
 	};
-	// const socialLinks = [
-	// 	{
-	// 		href: "https://github.com/HarshK213/",
-	// 		label: "Instagram",
-	// 		icon: <Github size={16} className="" />,
-	// 	},
-	// 	{
-	// 		href: "https://www.linkedin.com/in/harsh-kushwaha-697ba3289/",
-	// 		label: "LinkedIn",
-	// 		icon: <Linkedin size={16} className="size-5" />,
-	// 	},
-	// 	{
-	// 		href: "https://x.com/Akio21305",
-	// 		label: "X",
-	// 		icon: <Twitter size={16} className="size-5" />,
-	// 	},
-	// ];
 
 	return (
 		<>
@@ -91,7 +70,14 @@ function Hero() {
 					</p>
 
 					<div className="flex items-center">
-						<button className="bg-red-500 py-3 px-4 font-semibold rounded-xl flex gap-2">
+						<button
+							className="bg-red-500 py-3 px-4 font-semibold rounded-xl flex gap-2"
+							onClick={() =>
+								document
+									.getElementById("contact")
+									?.scrollIntoView({ behavior: "smooth" })
+							}
+						>
 							Let's Connect <ArrowRight />
 						</button>
 						<button
@@ -102,22 +88,6 @@ function Hero() {
 							{copied ? <Check size={16} /> : <Copy size={16} />}
 						</button>
 					</div>
-
-					{/* Social Buttons
-					<div className="flex gap-4 mt-2">
-						{socialLinks.map((link, index) => (
-							<a
-								key={index}
-								href={link.href}
-								target="_blank"
-								rel="noopener noreferrer"
-								aria-label={link.label}
-								className="size-10 bg-black/30 dark:bg-white/20 rounded-full flex items-center justify-center hover:bg-black/20 dark:hover:bg-white/30 transition-colors duration-300"
-							>
-								<div className="text-white">{link.icon}</div>
-							</a>
-						))}
-					</div> */}
 				</motion.div>
 			</div>
 		</>
