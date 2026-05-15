@@ -69,9 +69,9 @@ function Hero() {
 						.
 					</p>
 
-					<div className="flex items-center">
+					<div className="flex flex-col sm:flex-row items-center gap-2 sm:gap-0">
 						<button
-							className="bg-red-500 py-3 px-4 font-semibold rounded-xl flex gap-2"
+							className="bg-red-500 py-3 px-4 font-semibold rounded-xl flex gap-2 whitespace-nowrap"
 							onClick={() =>
 								document
 									.getElementById("contact")
@@ -81,10 +81,10 @@ function Hero() {
 							Let's Connect <ArrowRight />
 						</button>
 						<button
-							className="bg-transparent px-5 flex gap-2 items-center text-white/50 hover:text-white/80 font-mono"
+							className="bg-transparent px-3 sm:px-5 py-2 sm:py-0 flex gap-2 items-center text-white/50 hover:text-white/80 font-mono text-xs sm:text-sm md:text-base truncate max-w-[200px] sm:max-w-none"
 							onClick={handleCopy}
 						>
-							hkushwaha21305@gmail.com
+							<span className="truncate">hkushwaha21305@gmail.com</span>
 							{copied ? <Check size={16} /> : <Copy size={16} />}
 						</button>
 					</div>

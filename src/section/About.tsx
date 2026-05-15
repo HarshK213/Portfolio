@@ -15,7 +15,7 @@ function About() {
 
 			<div className="flex flex-col md:flex-row gap-10 items-center">
 				{/* Left Section - Para */}
-				<div className="w-[50%] flex flex-col items-center lg:items-start gap-8 lg:gap-10">
+				<div className="w-full lg:w-[50%] flex flex-col items-center lg:items-start gap-8 lg:gap-10">
 					{/* Image */}
 					{/* Image */}
 					<div className="w-full flex justify-center">

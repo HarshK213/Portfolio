@@ -136,7 +136,7 @@ function Skill() {
 						</h3>
 
 						{/* Skills */}
-						<div className="flex flex-wrap gap-4 ml-10">
+						<div className="flex flex-wrap gap-4 ml-0 sm:ml-10">
 							{categoryData.skills.map((skill, i) => {
 								const Icon = skill.icon;
 
